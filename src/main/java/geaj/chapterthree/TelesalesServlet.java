@@ -59,7 +59,6 @@ public class TelesalesServlet extends HttpServlet{
 			account.setProperty("phone",request.getParameter("phone"));
 			account.setProperty("website", request.getParameter("website"));
 			
-			System.out.println("were");
 			
 			ds.put(account);
 		 	response.sendRedirect("telesales?action=accountDisplay&accountId="+account.getKey().getId()); 
