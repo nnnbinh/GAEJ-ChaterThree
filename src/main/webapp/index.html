@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <title>Hello App Engine</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css"/>
+  </head>
+
+  <body> 
+ 	<span class="title">Google App Engine Servlet Example with Bigtable</span> 
+	<p>Before creating a new Opportunity, ensure that the Account does not already exist. You can also <a href="telesales?action=accountCreate"/>create a new account</a>.</p> 
+	<p/> 
+ 	<form method="post" action="telesales">
+ 		<input type="hidden" name="action" value="accountLookup"/> 
+ 		<span class="heading">Search by Account Name:</span> 
+ 		<p/> 
+ 		<input type="text" name="accountName" value="ACME" style="width: 300px"/> 
+ 		&nbsp 
+ 		<input type="submit" value="Search"/> 
+ 		&nbsp 
+ 	</form> 
+ 	<p/>
+  </body>
+</html>
