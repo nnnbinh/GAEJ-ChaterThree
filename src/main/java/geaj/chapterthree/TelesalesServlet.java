@@ -8,9 +8,11 @@ import java.util.Date;
 import java.util.List; 
 import java.text.DateFormat; 
 import javax.servlet.*; 
-import javax.jdo.PersistenceManager; 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 
 import geaj.chapterthree.entity.*;
+import geaj.chapterthree.EMF;
 
 import com.google.appengine.api.datastore.Key; 
 import com.google.appengine.api.datastore.KeyFactory;
@@ -29,8 +31,10 @@ public class TelesalesServlet extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
 		// create the persistence manager instance
 //		PersistenceManager pm = PMF.get().getPersistenceManager();
+
 		DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
-		
+		EntityManagerFactory emf = EMF.get();
+		EntityManager em = null;
 		// display the lookup form 
 		if(request.getParameter("action").equals("accountLookup")) {
 			 // query for the entities by name 
